@@ -1,39 +1,45 @@
 {% load static %}
 <!Doctype <!DOCTYPE html>
 <html>
-<head>
-    <meta charset="utf-8" />
-    <title>sms</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css"  href="{%static 'css/bootstrap.css'%}" />
-    <link rel="stylesheet" type="text/css"  href="{%static 'css/site.css'%}" />
-   
-</head>
-<body>
 
+<head>
+        <meta charset="utf-8" />
+        <title>sms</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" type="text/css" href="{%static 'css/bootstrap.css'%}" />
+        <link rel="stylesheet" type="text/css" href="{%static 'css/site.css'%}" />
+
+</head>
+
+<body>
+        <nav class="navbar navbar-dark bg-dark p-0 fixex-top shadow">
+                <a href="#" class="navbar-brand col-2 mr-0">NABPTEX CPS</a>
+        </nav>
         <div class="container-fluid">
                 <div class="row">
-                    <nav class="col-2 sidebar">
-                            <div class="sidebar-sticky" >
-                                    <ul class="nav flex-column">
-                                            <li class="nav-item">
-                                              <a class="nav-link " href="#">Dashboard</a>
-                                            </li>
-                                            <li class="nav-item">
-                                              <a class="nav-link" href="#">Students</a>
-                                            </li>
-                                         
-                                          </ul>
-                            </div>
-                    </nav>
-                    
-                    {%block content%}{%endblock%}
+                        <nav class=col-md-2 d-none d-md-block bg-light sidebar">
+                                <div class="sidebar-sticky">
+                                        <ul class="nav flex-column">
+                                                <li class="nav-item">
+                                                        <a class="nav-link " href="#">Dashboard</a>
+                                                </li>
+                                                <li class="nav-item">
+                                                        <a class="nav-link" href="{%url 'sms:dashboard_manage_students'%}">Students</a>
+                                                </li>
+
+                                        </ul>
+                                </div>
+                        </nav>
+                        <main class="col-md-9 ml-sm-auto col-lg-10 px-4 role="main">
+                                {%block content%}{%endblock%}
+                        </main>
                 </div>
-            </div>
-    
-    
-    <script src="{% static 'js/jquery.js' %}"></script>
-    <script src="{% static 'js/popper.js' %}"></script>
-    <script src="{% static 'js/bootstrap.js' %}"></script>
+        </div>
+       
+
+        <script src="{% static 'js/jquery.js' %}"></script>
+        <script src="{% static 'js/popper.js' %}"></script>
+        <script src="{% static 'js/bootstrap.js' %}"></script>
 </body>
+
 </html>
